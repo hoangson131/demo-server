@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Shopee-Demo')
-  .then(() => console.log('Connected!'))
+mongoose.connect('mongodb+srv://vohoangson011218:%40Son0964869203@dbson.868yayf.mongodb.net/Demo-Shopee?retryWrites=true&w=majority')
+  .then(() => console.log('Account Connected!'))
   .catch((err) => console.log(err));
 
 const Schema = mongoose.Schema
@@ -13,7 +13,7 @@ const AccountSchema = new Schema({
       type: String,
       ref: 'inforUser',
     }
-}, {collection: 'Account'})
+}, {collection: 'Accounts'})
 
 const inforUserSchema = new Schema({
   name: String,
@@ -21,7 +21,7 @@ const inforUserSchema = new Schema({
   address: String,
 },{collection: 'inforUser'})
 
-const AccountModel = mongoose.model('Account', AccountSchema)
+const AccountModel = mongoose.model('Accounts', AccountSchema)
 const inforUserModel = mongoose.model('inforUser', inforUserSchema)
 
 module.exports = AccountModel

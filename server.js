@@ -43,7 +43,6 @@ function generateToken(user) {
   const payload = {
     userid: user.id,
     username: user.username,
-    avatar: user.infor.avatarImage
   };
   // const options = {
   //   expiresIn: 60,
@@ -68,10 +67,11 @@ app.post('/login', (req, res, next) => {
   AccountModel.findOne({
     username: username,
   })
-  .populate('infor')
   .then((user) => {
     if(user && bcrypt.compareSync(password, user.password)){
+      console.log(user, "line 75");
       const token = generateToken(user)
+      console.log(token);
       res.status(200).json({
           message: "dang nhap thanh cong",
           token: token
@@ -116,6 +116,7 @@ app.post('/register', (req, res, next)=> {
     })
   })
 })
+
 
 
 app.listen(port, () => {

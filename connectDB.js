@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Shopee-Demo')
+mongoose.connect('mongodb+srv://vohoangson011218:@Son0964869203@dbson.868yayf.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('Connected!'))
   .catch((err) => console.log(err));
 
@@ -17,23 +17,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/Shopee-Demo')
         type: String,
         ref: 'Course'
     }
-  }, {collection: 'Account'});
+  }, {collection: 'Accounts'});
 
   const inforUserSchema = new Schema({
     name: String,
     age: Number,
     address: String,
   },{collection: 'inforUser'})
-
-  const courseSchema = new Schema({
-    name: String,
-    teacher: {
-        type: String,
-        ref: 'inforUser'
-    },
-    lesson: Number,
-    coin: Number
-  }, {collection: 'Course'})
 
   const productsSchema = new Schema({
     "productID": Number,
@@ -47,9 +37,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/Shopee-Demo')
   },{collection: 'Products'})
 
   const ProductsModel = mongoose.model('Products', productsSchema)
-  const AccountModel = mongoose.model('Account', accountSchema);
+  const AccountModel = mongoose.model('Accounts', accountSchema);
   const InforUserModel = mongoose.model('inforUser', inforUserSchema);
-  const CourseModel = mongoose.model('Course', courseSchema);
 
   // ProductsModel.find({}, {collection: "Products"})
   // .then((data) => console.log(data))
