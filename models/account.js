@@ -9,19 +9,9 @@ const Schema = mongoose.Schema
 const AccountSchema = new Schema({
     username: String,
     password: String,
-    infor: {
-      type: String,
-      ref: 'inforUser',
-    }
 }, {collection: 'Accounts'})
 
-const inforUserSchema = new Schema({
-  name: String,
-  age: Number,
-  address: String,
-},{collection: 'inforUser'})
 
 const AccountModel = mongoose.model('Accounts', AccountSchema)
-const inforUserModel = mongoose.model('inforUser', inforUserSchema)
 
 module.exports = AccountModel
