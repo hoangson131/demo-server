@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-const accountController = require('../controllers/accountController'); 
+const accountController = require('../controllers/accountController.js'); 
 const middleware = require('../middleware');
 
 // Dinh nghia cac tuyen duong
