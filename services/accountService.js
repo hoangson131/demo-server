@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require("bcryptjs")
 const salt = bcrypt.genSaltSync(10)
 
-const AccountModel = require('../models/Account.js');
+const AccountModel = require('../models/accountModel');
 
 const secretkey = "secretkey"
 let currentUserID = null

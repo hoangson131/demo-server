@@ -1,4 +1,4 @@
-const accountService = require('../services/accountService.js')
+const accountService = require('../services/accountService')
 
 // lay danh sach người dùng
 function getAllUsers(req,res) {

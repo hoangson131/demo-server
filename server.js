@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const routerUi = require("./ui/apiUi.js");
 
-const accountRoutes = require('./routes/accountRoutes.js')
+const accountRoutes = require('./routes/accountRoutes')
 
 app.use(cookieParser());
 // CORS policy settings

@@ -1,4 +1,4 @@
-const accountService = require("../services/accountService.js")
+const accountService = require("../services/accountService")
 
 function userAuthentication(req, res, next) {
     accountService.userAuthentication(req,res)
